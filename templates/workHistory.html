@@ -1,0 +1,14 @@
+<div class = "border-bottom" style = "margin-bottom: 16px; padding-bottom: 8px;">
+  <h4 style = "color: gray">
+    {{work['title']}}
+    </h4>
+    <div>
+      <b>Location: {{work['location']}}</b>
+    </div>
+  {% if 'duration' in work%}
+    <div>
+      <b>Duration: {{work['duration']}}</b>
+    </div>
+  {% endif %}
+
+</div>
