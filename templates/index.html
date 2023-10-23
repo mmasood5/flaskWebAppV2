@@ -9,32 +9,50 @@
   <title>Flask Web App</title>
 
   <style>
-    
+    #banner {
+      height: 360px;
+      object-fit: cover;
+      width: 100%;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 
 <body>
-  <div class = "container">
+  {% include 'nav.html'%}
+  <img class = "img-fluid" id = "banner" src = "https://flask-webapp.minhajmasood5.repl.co/static/header.jpg" />
+  <div class="container">
+    
     <h1 class= "text-center mt-2 mb-4">{{name}} Portfolio</h1>
-    <img class = "img-fluid"id = "banner" src = "https://flask-webapp.minhajmasood5.repl.co/static/header.jpg" />
+    
     
     <h2 class= "text-center mt-2 mb-4">About Me</h2>
-    <p class = "lead">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-  
-  <h2 class = "text-center mt-2 mb-4">Work History</h2>
-    <div>
-      {% for work in work %}
-        {% include 'workHistory.html' %}
-      {% endfor %}
+    <div class = "row" style="margin-bottom:16px">
+      <div class = "col-md-6">
+        <p class = "lead">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      </p>
+      </div>
+      <div class = "d-none d-md-block col-md-6">
+        <img src = "/static/profilep.jpg" style ="height: 320px; border-radius: 16px">
+      </div>
     </div>
-  
-    <div class = "text-center">
-      <button class = "btn btn-primary">Contact Me</button>
-      <p class="mt-4">Copyright 2023, Minhaj</p>
-     </div>
-    
-  </div>
 
+  
+    <h2 class = "text-center mt-2 mb-4">Work History</h2>
+      <div>
+        {% for work in work %}
+          {% include 'workHistory.html' %}
+        {% endfor %}
+      </div>
+    
+      <div class = "text-center">
+        <button class = "btn btn-primary">Contact Me</button>
+        <p class="mt-4">Copyright 2023, Minhaj</p>
+       </div>
+      
+    </div>
+    {% include 'footer.html'%}
 </body>
+
 </html>
